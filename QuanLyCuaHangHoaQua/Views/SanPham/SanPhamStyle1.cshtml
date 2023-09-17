@@ -1,0 +1,81 @@
+﻿
+@model IEnumerable<QuanLyCuaHangHoaQua.Models.SanPham>
+
+<div class="container-fluid py-lg-5 py-md-4 py-sm-4 py-3">
+    <div class="left-ads-display col-lg-9">
+        <div class="row" style="width: 1000px">
+            @foreach (var item in Model)
+            {
+                <div class="product-toys-info" style="margin-right: 10px">
+                    <div class="men-pro-item">
+                        <div class="men-thumb-item">
+                            <img src="@Url.Content(item.Anh)" width="250px" height="250px" class="img-thumbnail img-fluid" alt="">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="@Url.Action("XemChiTiet", "SanPham", new { id = item.ID })" class="link-product-add-cart">QUICK VIEW</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-info-product">
+                            <div class="info-product-price">
+                                <div class="grid_meta">
+                                    <div class="product_price">
+                                        <h4>
+                                            <a href="@Url.Action("XemChiTiet", "SanPham", new { id = item.ID })">@item.Ten</a>
+                                        </h4>
+                                        <div class="grid-price mt-2">
+                                            <span class="money ">@item.Gia.Value.ToString("#,##") VNĐ</span>
+                                        </div>
+                                    </div>
+                                    <ul class="stars">
+                                        <li>
+                                            <a href="#">
+                                                <i class="fas fa-star"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fas fa-star"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fas fa-star"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fas fa-star"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="far fa-star-half-o"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="toys single-item hvr-outline-out">
+                                    <form action="#" method="post">
+                                        <input type="hidden" name="cmd" value="_cart">
+                                        <input type="hidden" name="add" value="1">
+                                        <input type="hidden" name="toys_item" value="toys(barbie)">
+                                        <input type="hidden" name="amount" value="575.00">
+
+
+
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+    
+
+

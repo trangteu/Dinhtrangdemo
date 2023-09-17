@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "SuaGioHang";
+    Layout = "~/Views/Layout/_ProductLayout.cshtml";
+}
+
+@using QuanLyCuaHangHoaQua.Models
+@model ItemGioHang
+@{
+    List<ItemGioHang> lstGioHang = ViewBag.GioHang as List<ItemGioHang>;
+}
+
+<table class="table" style="width:75% ">
+    <tr>
+        <td>Mã SP</td>
+        <td>Tên SP</td>
+        <td>Hình ảnh</td>
+        <td>Số lượng</td>
+        <td>Đơn Giá</td>
+        <td>Thành tiền</td>
+    </tr>
+    @foreach (var item in lstGioHang)
+    {
+        //mã sp từ xem
+        if (Model.IDSanPham == item.IDSanPham)
+        {
+            using (Html.BeginForm("CapNhatGioHang", "GioHang"))
+            {
+
+                <tr>
+                    <td>@item.IDSanPham @Html.Hidden("IDSanPham", item.IDSanPham)</td>
+                    <td>@item.TenSp</td>
+                    <td>
+                        <img src="@Url.Content(item.HinhAnh)" width="150px" height="150px" />
+                    </td>
+                    <td>@Html.TextBox("SoLuong", item.SoLuong) </td>
+                    <td>@item.Gia.ToString("#,##") VNĐ</td>
+                    <td>@item.ThanhTien.ToString("#,##") VNĐ</td>
+                    <td><input type="submit" value="Cập nhật" style="padding:10px" /></td>
+                </tr>
+            }
+
+        }
+        else
+        {
+            <tr>
+                <td>@item.IDSanPham</td>
+                <td>@item.TenSp</td>
+                <td>
+                    <img src="@Url.Content(item.HinhAnh)" width="150px" height="150px" />
+                </td>
+                <td>@item.SoLuong</td>
+                <td>@item.Gia.ToString("#,##") VNĐ</td>
+                <td>@item.ThanhTien.ToString("#,##") VNĐ</td>
+                <td>@Html.ActionLink("Sửa", "SuaGioHang", new { @MaSp = item.IDSanPham })</td>
+                <td>
+                    @Html.ActionLink("Xóa", "XoaGioHang", new { @MaSp = item.IDSanPham })
+                </td>
+            </tr>
+        }
+
+    }
+</table>
+
+

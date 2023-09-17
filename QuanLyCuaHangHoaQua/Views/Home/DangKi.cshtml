@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "DangKi";
+    Layout = "~/Views/Layout/_ProductLayout.cshtml";
+}
+
+@*@using CaptchaMvc.HtmlHelpers
+@using CaptchaMvc*@
+@using QuanLyCuaHangHoaQua.Models
+@model NguoiDung
+
+<div class=" register" style=" background-image: url(../../Content/images/b1.jpg); background-repeat: no-repeat;background-size:cover;">
+    <style>
+        span, h3 {
+            font-size: 20px;
+            color: aliceblue;
+            text-align: center;
+        }
+        input {
+            font-size: 20px;
+        }
+    </style>
+    <h1></h1>
+    @using (Html.BeginForm())
+    {
+        <div class="col-md-4 register-top-grid" style="margin-top: 250px; text-align: center;">
+            <h3>Thông tin cá nhân</h3>
+            <div>
+                <span>Họ và tên</span>
+                <br />
+                @Html.TextBox("Ten")
+                <p style="color:rebeccapurple">
+                    @Html.ValidationMessageFor(model => model.Ten)
+
+                </p>
+            </div>
+            <div>
+                <span>Email</span>
+                <br />
+                @Html.TextBox("Email")
+                @Html.ValidationMessageFor(model => model.Email)
+
+
+            </div>
+            <div>
+                <span>Địa chỉ</span>
+                <br />
+                @Html.TextBox("DiaChi")
+                @Html.ValidationMessageFor(model => model.DiaChi)
+
+
+            </div>
+            <div>
+                <span>Số điện thoại</span>
+                <br />
+                @Html.TextBox("SoDienThoai")
+                @Html.ValidationMessageFor(model => model.SoDienThoai)
+
+            </div>
+
+        </div>
+        <div class="col-md-5 register-bottom-grid register-top-grid" style=" text-align:center; margin-top:250px">
+            <h3>Thông tin đăng nhập</h3>
+            <div>
+                <span>Tài khoản</span>
+                <br />
+                @Html.TextBox("TaiKhoan")
+                @Html.ValidationMessageFor(model => model.TaiKhoan)
+
+
+            </div>
+            <div>
+                <span>Mật khẩu</span>
+                <br />
+                @Html.Password("MatKhau")
+                @Html.ValidationMessageFor(model => model.MatKhau)
+
+            </div>
+            <div>
+                <span>Nhập lại mật khẩu</span>
+                <br />
+                @Html.Password("NhapLaiMatKhau")
+            </div>
+            @*<div>
+            @Html.MathCaptcha()
+        </div>*@
+            <br />
+            <input type="submit" value="submit">
+        </div>
+        <div class="clearfix"> </div>
+    }
+    <h2 style="text-align:center; margin-top:40px">@ViewBag.ThongBao</h2>
+
+</div>
+

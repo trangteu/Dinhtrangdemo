@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="QuanLyCuaHangHoaQuaEntities-Web.config Connection String" description="QuanLyCuaHangHoaQuaEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.e.csdl|res://*/Models.e.ssdl|res://*/Models.e.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=LAPTOP-PV8N4IOA;initial catalog=QuanLyCuaHangHoaQua;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Học\ Kì\ II\ \(2022-2023\)\\Đồ\ án\ Web\ nâng\ cao\\QuanLyCuaHangHoaQua\\QuanLyCuaHangHoaQua\\QuanLyCuaHangHoaQua\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='QuanLyCuaHangHoaQuaEntities']/@connectionString" />
+  </parameter>
+  <parameter name="QuanLyCuaHangHoaQuaEntities1-Web.config Connection String" description="QuanLyCuaHangHoaQuaEntities1 Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-14D46B2\VUONGDINHTRANG;initial catalog=QuanLyCuaHangHoaQua;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Học\ Kì\ II\ \(2022-2023\)\\Đồ\ án\ Web\ nâng\ cao\\QuanLyCuaHangHoaQua\\QuanLyCuaHangHoaQua\\QuanLyCuaHangHoaQua\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='QuanLyCuaHangHoaQuaEntities1']/@connectionString" />
+  </parameter>
+</parameters>

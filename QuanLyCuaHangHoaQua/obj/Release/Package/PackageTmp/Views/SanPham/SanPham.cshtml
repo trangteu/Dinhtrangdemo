@@ -1,0 +1,115 @@
+﻿@model IEnumerable<QuanLyCuaHangHoaQua.Models.SanPham>
+@{
+    ViewBag.Title = "SanPham";
+    Layout = "~/Views/Layout/_ProductLayout.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+@*<div class="content-top">
+        <div class="container">
+            <div class="col-md-9 product1" style="margin-left: 12%; margin-top: 30%">
+                <div class=" bottom-product">
+                    @foreach (var item in Model)
+                    {
+
+                        <div class="col-md-4 bottom-cd simpleCart_shelfItem" style="margin-bottom: 10%">
+                            <div class="product-at ">
+                                <a href="@Url.Action("XemChiTiet", "SanPham", new {id=item.ID})">
+                                    <img class="img-responsive" src="@Url.Content(item.Anh)" width="300px" height="300px" alt="">
+                                    <div class="pro-grid">
+                                        <span class="buy-in">Buy Now</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <p class="tun">@item.Ten</p>
+                            <a href="@Url.Action("ThemGioHang", "GioHang", new { @MaSp = item.ID, @strURL = Request.Url.ToString()})" class="item_add"><p class="number item_price"><i> </i>@item.Gia.Value.ToString("#,##") VNĐ</p></a>
+                        </div>
+                    }
+
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+<div class="container-fluid py-lg-5 py-md-4 py-sm-4 py-3">
+    <div class="left-ads-display col-lg-9">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="product-toys-info" style="margin-top:0%">
+                    <div class="men-pro-item">
+                        <div class="men-thumb-item">
+                            <img src="@Url.Content(item.Anh)" width="300px" height="200px" class="img-thumbnail img-fluid" alt="">
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="@Url.Action("XemChiTiet", "SanPham", new { id = item.ID })" class="link-product-add-cart">QUICK VIEW</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-info-product">
+                            <div class="info-product-price">
+                                <div class="grid_meta">
+                                    <div class="product_price">
+                                        <h4>
+                                            <a href="@Url.Action("XemChiTiet", "SanPham", new { id = item.ID })">@item.Ten</a>
+                                        </h4>
+                                        <div class="grid-price mt-2">
+                                            <span class="money ">@item.Gia.Value.ToString("#,##") VNĐ</span>
+                                        </div>
+                                    </div>
+                                    <ul class="stars">
+                                        <li>
+                                            <a href="#">
+                                                <i class="fas fa-star"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fas fa-star"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fas fa-star"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fas fa-star"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="far fa-star-half-o"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="toys single-item hvr-outline-out">
+                                    <form action="#" method="post">
+                                        <input type="hidden" name="cmd" value="_cart">
+                                        <input type="hidden" name="add" value="1">
+                                        <input type="hidden" name="toys_item" value="toys(barbie)">
+                                        <input type="hidden" name="amount" value="575.00">
+
+
+
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "XemGioHang";
+    Layout = "~/Views/Layout/_ProductLayout.cshtml";
+}
+
+@using QuanLyCuaHangHoaQua.Models
+@model List<ItemGioHang>
+<view style="margin-top: 200px"><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </view>@if (Model == null || Model.Count == 0)
+{
+    <h1>Giỏ hàng rỗng</h1>
+}
+else
+{
+    <table class="table" style="width:100%;">
+        <tr>
+            <td>Mã SP</td>
+            <td>Tên SP</td>
+            <td>Hình ảnh</td>
+            <td>Số lượng</td>
+            <td>Đơn Giá</td>
+            <td>Thành tiền</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IDSanPham</td>
+                <td>@item.TenSp</td>
+                <td>
+                    <img src="@Url.Content(item.HinhAnh)" width="150px" height="150px" />
+                </td>
+                <td>@item.SoLuong</td>
+                <td>@item.Gia.ToString("#,##") VNĐ</td>
+                <td>@item.ThanhTien.ToString("#,##") VNĐ</td>
+                <td>
+                    @Html.ActionLink("Sửa", "SuaGioHang", new { @MaSp = item.IDSanPham })
+
+                </td>
+                <td>
+                    @Html.ActionLink("Xóa", "XoaGioHang", new { @MaSp = item.IDSanPham })
+                </td>
+
+            </tr>
+        }
+    </table>
+    <div class="DatHang">
+        @using (Html.BeginForm("DatHang", "GioHang"))
+        {
+            <input type="submit" value="Đặt hàng" style="padding:7px 12px; margin-left: 700px;" />
+        }
+
+    </div>
+}
+
+
+
